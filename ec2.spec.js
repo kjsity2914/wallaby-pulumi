@@ -1,7 +1,6 @@
 // Copyright 2016-2020, Pulumi Corporation.  All rights reserved.
 
 const pulumi = require("@pulumi/pulumi");
-require('mocha');
 
 pulumi.runtime.setMocks({
     newResource: function(type, name, inputs) {

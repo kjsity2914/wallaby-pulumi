@@ -1,19 +1,8 @@
+// Wallaby configuration file is not actually required in this case;
+// Kept to keep compatible with other branches
+
 module.exports = function (wallaby) {
   return {
-    files: [
-      '**/*.js', 
-      { pattern: '**/*.yaml', instrument: false }, 
-      '!**/*tests.js', 
-      '!node_modules/**/*.*'
-    ],
-
-    tests: [
-      '**/*tests.js',
-      '!node_modules/**/*.*'
-    ],
-
-    env: {
-      type: 'node',
-    },
+    autoDetect: true
   };
 };
