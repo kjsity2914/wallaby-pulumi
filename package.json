@@ -1,7 +1,7 @@
 {
   "name": "test-unit-ts",
   "scripts": {
-    "test": "mocha -r ts-node/register ec2tests.ts"
+    "test": "mocha ec2tests.js"
   },
   "devDependencies": {},
   "dependencies": {

@@ -1,10 +1,10 @@
 // Copyright 2016-2020, Pulumi Corporation.  All rights reserved.
 
-import * as pulumi from "@pulumi/pulumi";
-import "mocha";
+const pulumi = require("@pulumi/pulumi");
+require('mocha');
 
 pulumi.runtime.setMocks({
-    newResource: function(type: string, name: string, inputs: any): {id: string, state: any} {
+    newResource: function(type, name, inputs) {
         switch (type) {
             case "aws:ec2/securityGroup:SecurityGroup":
                 return {
@@ -39,13 +39,13 @@ pulumi.runtime.setMocks({
                 };
         }
     },
-    call: function(token: string, args: any, provider?: string) {
+    call: function(token, args, provider) {
         return args;
     },
 });
 
 // It's important to import the program _after_ the mocks are defined.
-import * as infra from "./index";
+const infra = require('./index');
 
 describe("Infrastructure", function() {
     const server = infra.server;

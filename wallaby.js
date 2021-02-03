@@ -1,22 +1,19 @@
 module.exports = function (wallaby) {
   return {
     files: [
-      '**/*.ts', 
+      '**/*.js', 
       { pattern: '**/*.yaml', instrument: false }, 
-      '!**/*tests.ts', 
+      '!**/*tests.js', 
       '!node_modules/**/*.*'
     ],
 
     tests: [
-      '**/*tests.ts'
+      '**/*tests.js',
+      '!node_modules/**/*.*'
     ],
 
     env: {
       type: 'node',
-    },
-
-    compilers: {
-      '**/*.ts?(x)': wallaby.compilers.typeScript(),
     },
   };
 };
