@@ -1,6 +1,7 @@
 // Copyright 2016-2020, Pulumi Corporation.  All rights reserved.
 
 const aws = require('@pulumi/aws');
+const azure = require('@pulumi/azure');
 
 const group = new aws.ec2.SecurityGroup("web-secgrp", {
     ingress: [
